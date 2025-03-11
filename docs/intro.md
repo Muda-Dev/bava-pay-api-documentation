@@ -2,11 +2,11 @@
 sidebar_position: 1
 ---
 
-# BavaPay OpenAPIs
+# MudaPay OpenAPIs
 
 ## Introduction
 
-This documentation presents all the service APIs that BavaPay makes available.
+This documentation presents all the service APIs that MudaPay makes available.
 
 They cover our **Push Payments**, **Pull Payments**, and **Multi-Currency Payment Solutions** across East Africa.
 

@@ -34,8 +34,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`BavaPay - Financial Solutions for East Africa`}
-      description="BavaPay provides seamless financial integrations, enabling push and pull payments across multiple currencies and payment methods.">
+      title={`MudaPay - Financial Solutions for East Africa`}
+      description="MudaPay provides seamless financial integrations, enabling push and pull payments across multiple currencies and payment methods.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
