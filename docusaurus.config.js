@@ -8,7 +8,7 @@ const config = {
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://stage-api.muda.tech/payments/',
+  url: 'https://stage-api.muda.tech',
   baseUrl: '/',
 
   // GitHub pages deployment config.
@@ -47,7 +47,7 @@ const config = {
       title: 'Home',
       logo: {
         alt: 'Documentation Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {
