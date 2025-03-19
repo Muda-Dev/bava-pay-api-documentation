@@ -8,7 +8,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Send money to bank accounts and mobile wallets instantly, ensuring fast and secure transactions across East Africa.
+        Send money to bank accounts and mobile wallets instantly, ensuring fast and secure transactions across  the World.
       </>
     ),
   },
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Work with multiple currencies including KES (Kenyan Shilling), UGX (Ugandan Shilling), and TZS (Tanzanian Shilling).
+        Work with multiple currencies including KES (Kenyan Shilling), UGX (Ugandan Shilling), TZS (Tanzanian Shilling), and many more.
       </>
     ),
   },
