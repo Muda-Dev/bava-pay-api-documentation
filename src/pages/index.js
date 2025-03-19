@@ -13,14 +13,14 @@ function HomepageHeader() {
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          East Africa Mobile Money Collections
+        New Age Financial Solutions
         </Heading>
         <p className="hero__subtitle">
           Integrate once, access multiple currencies and payment methods. Build better financial experiences.
         </p>
         <div className={styles.content}>
           <p>
-          Open Gateway API enables businesses in Uganda to securely collect mobile money payments from customers using MTN, Airtel, and Mpesa. Customers authenticate transactions by entering their mobile money PIN, ensuring a seamless and reliable process. Funds are instantly debited from the customer's account and credited to the merchant. The API also supports multiple East African currencies, including KES (Kenyan Shilling), UGX (Ugandan Shilling), and TZS (Tanzanian Shilling), making it a versatile solution for regional businesses.
+          Open Gateway API enables businesses to securely collect payments from customers using various payments methods. We have integrated mobile money, wallets, stable-coins, bank and POS payments into the system. The API a growing list of currencies, making it a versatile solution for global businesses.
           </p>
         </div>
 
@@ -40,8 +40,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`MudaPay - East Africa Mobile Money Collections`}
-      description="MudaPay provides seamless financial integrations, enabling push and pull payments across multiple currencies and payment methods.">
+      title={`New Age - MUDA Mobile Money Collections`}
+      description="New Age provides seamless financial integrations, enabling Payout and Collection payments across multiple currencies and payment methods.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

@@ -3,7 +3,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My API Documentation',
+  title: 'New Age API Documentation',
   tagline: 'Documenting APIs Made Easy',
   favicon: 'img/logo.png',
 
@@ -13,7 +13,7 @@ const config = {
 
   // GitHub pages deployment config.
   organizationName: 'muda',
-  projectName: 'Muda-api-doc',
+  projectName: 'New Age-api-doc',
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',

@@ -9,51 +9,50 @@ const sidebars = {
   tutorialSidebar: [
     "intro",
     {
-      type: "category",
-      label: "Client",
-      items: [
-        {
-          type: "doc",
-          id: "3",
-          label: "Auth"
-        },
-        {
-          type: "doc",
-          id: "4",
-          label: "Validate Request"
-        },
-        {
-          type: "doc",
-          id: "5",
-          label: "Get Transaction By ID"
-        },
-        {
-          type: "doc",
-          id: "6",
-          label: "Get Balance"
-        },
-        {
-          type: "doc",
-          id: "7",
-          label: "Confirm Push"
-        },
-        {
-          type: "doc",
-          id: "8",
-          label: "Complete Pull"
-        },
-        {
-          type: "doc",
-          id: "9",
-          label: "Get Statement"
-        },
-        {
-          type: "doc",
-          id: "10",
-          label: "Get Transaction By Reference ID"
-        }
-      ]
+      type: "doc",
+      id: "3",
+      label: "Auth"
     },
+    {
+      type: "doc",
+      id: "7",
+      label: "Confirm Payout"
+    },
+    {
+      type: "doc",
+      id: "8",
+      label: "Complete Collection"
+    },
+    {
+      type: "doc",
+      id: "4",
+      label: "Validate Request"
+    },
+    {
+      type: "doc",
+      id: "5",
+      label: "Get Transaction By ID"
+    },
+    {
+      type: "doc",
+      id: "6",
+      label: "Get Balance"
+    },
+    {
+      type: "doc",
+      id: "9",
+      label: "Get Statement"
+    },
+    {
+      type: "doc",
+      id: "10",
+      label: "Get Transaction By Reference ID"
+    },
+    {
+      type: "doc",
+      id: "11",
+      label: "Get Products"
+    }
   ]
 };
 

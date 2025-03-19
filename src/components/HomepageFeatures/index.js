@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Push Payments',
+    title: 'Payout Payments',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -13,7 +13,7 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Pull Payments',
+    title: 'Collection Payments',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
@@ -26,7 +26,7 @@ const FeatureList = [
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Work with multiple East African currencies including KES (Kenyan Shilling), UGX (Ugandan Shilling), and TZS (Tanzanian Shilling).
+        Work with multiple currencies including KES (Kenyan Shilling), UGX (Ugandan Shilling), and TZS (Tanzanian Shilling).
       </>
     ),
   },
