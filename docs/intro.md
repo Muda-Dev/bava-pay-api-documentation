@@ -2,9 +2,7 @@
 sidebar_position: 1
 ---
 
-# Muda Pay API Documentation
-
-## Introduction
+# Introduction
 
 This document provides information about the Muda Payments API endpoints that are available for third-party integration. The API allows you to process **payments**, **check balances**, and **manage transactions**.
 

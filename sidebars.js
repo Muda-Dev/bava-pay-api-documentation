@@ -10,13 +10,13 @@ const sidebars = {
     "intro",
     {
       type: "doc",
-      id: "3",
-      label: "Validate Transaction Request"
+      id: "4",
+      label: "Validate Account"
     },
     {
       type: "doc",
-      id: "4",
-      label: "Validate Account"
+      id: "3",
+      label: "Validate Transaction Request"
     },
     {
       type: "doc",
