@@ -11,47 +11,52 @@ const sidebars = {
     {
       type: "doc",
       id: "3",
-      label: "Auth"
-    },
-    {
-      type: "doc",
-      id: "7",
-      label: "Confirm Payout"
-    },
-    {
-      type: "doc",
-      id: "8",
-      label: "Complete Collection"
+      label: "Validate Transaction Request"
     },
     {
       type: "doc",
       id: "4",
-      label: "Validate Request"
+      label: "Validate Account"
+    },
+    {
+      type: "doc",
+      id: "7",
+      label: "Direct Payout"
+    },
+    {
+      type: "doc",
+      id: "8",
+      label: "Direct Collection"
     },
     {
       type: "doc",
       id: "5",
-      label: "Get Transaction By ID"
-    },
-    {
-      type: "doc",
-      id: "6",
       label: "Get Balance"
     },
     {
       type: "doc",
-      id: "9",
+      id: "6",
       label: "Get Statement"
     },
     {
       type: "doc",
+      id: "9",
+      label: "Get Transaction"
+    },
+    {
+      type: "doc",
       id: "10",
-      label: "Get Transaction By Reference ID"
+      label: "Get PegPay Balance"
     },
     {
       type: "doc",
       id: "11",
-      label: "Get Products"
+      label: "Webhooks"
+    },
+     {
+      type: "doc",
+      id: "12",
+      label: "Error Handling"
     }
   ]
 };
