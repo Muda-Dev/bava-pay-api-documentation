@@ -40,6 +40,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      id: "2",
+      label: "Get Products"
+    },
+    {
+      type: "doc",
       id: "9",
       label: "Get Transaction"
     },
