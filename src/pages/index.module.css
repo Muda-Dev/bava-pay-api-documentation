@@ -21,3 +21,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.buttonRow {
+  margin-top: 5rem; /* Increased top spacing */
+  display: flex;
+  gap: 1rem; /* Adds spacing between buttons */
+  justify-content: center; /* Centers the buttons horizontally */
+  margin-top: 1rem; /* Adds some space above the buttons */
+}
