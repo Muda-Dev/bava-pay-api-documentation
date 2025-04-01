@@ -42,12 +42,12 @@ const sidebarsLiquidity = {
             type: "doc",
             id: "register-as-provider",
             label: "Becoming a Provider"
-          },
+          }/* ,
           {
             type: "doc",
             id: "provider-authentication",
             label: "Authentication"
-          }
+          } */
         ]
       },
       {
