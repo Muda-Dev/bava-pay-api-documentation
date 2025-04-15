@@ -10,6 +10,11 @@ const sidebars = {
     "intro",
     {
       type: "doc",
+      id: "13",
+      label: "Authentication"
+    },
+    {
+      type: "doc",
       id: "4",
       label: "Validate Account"
     },
