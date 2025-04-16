@@ -10,62 +10,52 @@ const sidebars = {
     "intro",
     {
       type: "doc",
-      id: "authentication",
+      id: "13",
       label: "Authentication"
     },
     {
       type: "doc",
-      id: "validate-account",
-      label: "Validate Account"
-    },
-    {
-      type: "doc",
-      id: "get-balance",
-      label: "Get Balance"
-    },
-    {
-      type: "doc",
-      id: "validate-transaction-request",
-      label: "Validate Transaction Request"
-    },
-    {
-      type: "doc",
-      id: "direct-payout",
-      label: "Direct Payout"
-    },
-    {
-      type: "doc",
-      id: "direct-collection",
-      label: "Direct Collection"
-    },
-    {
-      type: "doc",
-      id: "get-statement",
-      label: "Get Statement"
-    },
-    {
-      type: "doc",
-      id: "get-products",
+      id: "2",
       label: "Get Products"
     },
     {
       type: "doc",
-      id: "get-transaction",
-      label: "Get Transaction"
+      id: "4",
+      label: "Validate Account"
     },
-    /* {
-      type: "doc",
-      id: "get-pegpay-balance",
-      label: "Get PegPay Balance"
-    }, */
     {
       type: "doc",
-      id: "webhooks",
+      id: "7",
+      label: "Direct Payout"
+    },
+    {
+      type: "doc",
+      id: "8",
+      label: "Direct Collection"
+    },
+    {
+      type: "doc",
+      id: "5",
+      label: "Get Balance"
+    },
+    {
+      type: "doc",
+      id: "6",
+      label: "Get Statement"
+    },
+    {
+      type: "doc",
+      id: "9",
+      label: "Get Transaction"
+    },
+    {
+      type: "doc",
+      id: "11",
       label: "Webhooks"
     },
     {
       type: "doc",
-      id: "error-handling",
+      id: "12",
       label: "Error Handling"
     }
   ]
