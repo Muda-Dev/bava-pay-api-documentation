@@ -20,6 +20,11 @@ const sidebars = {
     },
     {
       type: "doc",
+      id: "get-balance",
+      label: "Get Balance"
+    },
+    {
+      type: "doc",
       id: "validate-transaction-request",
       label: "Validate Transaction Request"
     },
@@ -32,11 +37,6 @@ const sidebars = {
       type: "doc",
       id: "direct-collection",
       label: "Direct Collection"
-    },
-    {
-      type: "doc",
-      id: "get-balance",
-      label: "Get Balance"
     },
     {
       type: "doc",
@@ -63,7 +63,7 @@ const sidebars = {
       id: "webhooks",
       label: "Webhooks"
     },
-     {
+    {
       type: "doc",
       id: "error-handling",
       label: "Error Handling"
