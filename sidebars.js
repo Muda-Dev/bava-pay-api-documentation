@@ -53,11 +53,11 @@ const sidebars = {
       id: "9",
       label: "Get Transaction"
     },
-    {
+    /* {
       type: "doc",
       id: "10",
       label: "Get PegPay Balance"
-    },
+    }, */
     {
       type: "doc",
       id: "11",
