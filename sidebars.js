@@ -10,62 +10,62 @@ const sidebars = {
     "intro",
     {
       type: "doc",
-      id: "13",
+      id: "authentication",
       label: "Authentication"
     },
     {
       type: "doc",
-      id: "4",
+      id: "validate-account",
       label: "Validate Account"
     },
     {
       type: "doc",
-      id: "3",
+      id: "validate-transaction-request",
       label: "Validate Transaction Request"
     },
     {
       type: "doc",
-      id: "7",
+      id: "direct-payout",
       label: "Direct Payout"
     },
     {
       type: "doc",
-      id: "8",
+      id: "direct-collection",
       label: "Direct Collection"
     },
     {
       type: "doc",
-      id: "5",
+      id: "get-balance",
       label: "Get Balance"
     },
     {
       type: "doc",
-      id: "6",
+      id: "get-statement",
       label: "Get Statement"
     },
     {
       type: "doc",
-      id: "2",
+      id: "get-products",
       label: "Get Products"
     },
     {
       type: "doc",
-      id: "9",
+      id: "get-transaction",
       label: "Get Transaction"
     },
     /* {
       type: "doc",
-      id: "10",
+      id: "get-pegpay-balance",
       label: "Get PegPay Balance"
     }, */
     {
       type: "doc",
-      id: "11",
+      id: "webhooks",
       label: "Webhooks"
     },
      {
       type: "doc",
-      id: "12",
+      id: "error-handling",
       label: "Error Handling"
     }
   ]
