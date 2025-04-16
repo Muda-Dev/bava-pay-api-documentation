@@ -22,5 +22,5 @@ Authorization: Bearer <your_jwt_token>
 ## Base URL
 
 ```
-https://api.muda.com/payment
+https://api.muda.tech
 ```

@@ -15,13 +15,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "4",
-      label: "Validate Account"
+      id: "2",
+      label: "Get Products"
     },
     {
       type: "doc",
-      id: "3",
-      label: "Validate Transaction Request"
+      id: "4",
+      label: "Validate Account"
     },
     {
       type: "doc",
@@ -45,25 +45,15 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "2",
-      label: "Get Products"
-    },
-    {
-      type: "doc",
       id: "9",
       label: "Get Transaction"
     },
-    /* {
-      type: "doc",
-      id: "10",
-      label: "Get PegPay Balance"
-    }, */
     {
       type: "doc",
       id: "11",
       label: "Webhooks"
     },
-     {
+    {
       type: "doc",
       id: "12",
       label: "Error Handling"
