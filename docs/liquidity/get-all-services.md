@@ -11,7 +11,7 @@ Method: GET
 Paramaters: id for the wallet id
 
 ```json
-  {{URL}}/account/{{id}}
+  {{URL}}/accounts/services
 ```
 
 #### Response raw (json)

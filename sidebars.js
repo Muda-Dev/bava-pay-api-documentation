@@ -15,48 +15,157 @@ const sidebars = {
     },
     {
       type: "doc",
-      id: "products",
-      label: "Get Products"
-    },
-    {
-      type: "doc",
-      id: "validate-request",
-      label: "Validate Account"
-    },
-    {
-      type: "doc",
-      id: "direct-payout",
-      label: "Direct Payout"
-    },
-    {
-      type: "doc",
-      id: "direct-collection",
-      label: "Direct Collection"
-    },
-    {
-      type: "doc",
-      id: "balances",
-      label: "Get Balance"
-    },
-    {
-      type: "doc",
-      id: "statement",
-      label: "Get Statement"
-    },
-    {
-      type: "doc",
-      id: "get-transactions",
-      label: "Get Transaction"
-    },
-    {
-      type: "doc",
       id: "webhooks",
       label: "Webhooks"
     },
     {
+      type: "category",
+      label: "Muda Pay",
+      items: [
+        {
+          type: "doc",
+          id: "products",
+          label: "Get Products"
+        },
+        {
+          type: "doc",
+          id: "validate-request",
+          label: "Validate Account"
+        },
+        {
+          type: "doc",
+          id: "direct-payout",
+          label: "Direct Payout"
+        },
+        {
+          type: "doc",
+          id: "direct-collection",
+          label: "Direct Collection"
+        },
+        {
+          type: "doc",
+          id: "balances",
+          label: "Get Balance"
+        },
+        {
+          type: "doc",
+          id: "statement",
+          label: "Get Statement"
+        },
+        {
+          type: "doc",
+          id: "get-transactions",
+          label: "Get Transaction"
+        },
+        {
+          type: "doc",
+          id: "error-handling",
+          label: "Error Handling"
+        }
+      ]
+    },
+    {
+      type: "category",
+      label: "Liquidity Rail",
+      items: [
+        {
+          type: "category",
+          label: "Get Started",
+          items: [
+            {
+              type: "doc",
+              id: "liquidity/become-a-provider-get-started",
+              label: "Become a Provider"
+            }
+          ]
+        },
+        {
+          type: "doc",
+          id: "liquidity/get-all-services",
+          label: "Get All Services"
+        },
+        {
+          type: "doc",
+          id: "liquidity/assets",
+          label: "Assets"
+        },
+        {
+          type: "doc",
+          id: "liquidity/banks",
+          label: "Banks"
+        },
+        {
+          type: "doc",
+          id: "liquidity/get-rate",
+          label: "Post Rate"
+        },
+        {
+          type: "doc",
+          id: "liquidity/get-providers",
+          label: "Get Providers"
+        },
+        {
+          type: "doc",
+          id: "liquidity/make-quote",
+          label: "Send Money"
+        },
+        {
+          type: "doc",
+          id: "liquidity/get-payout-transaction",
+          label: "Get Transaction"
+        },
+        {
+          type: "doc",
+          id: "liquidity/cancel-quote",
+          label: "Cancel Quote"
+        },
+        {
+          type: "doc",
+          id: "liquidity/get-pending-quotes",
+          label: "Get Pending Quotes"
+        },
+        {
+          type: "category",
+          label: "Payment Methods",
+          items: [
+            {
+              type: "doc",
+              id: "liquidity/add-payment-method",
+              label: "Add Payment Method"
+            },
+            {
+              type: "doc",
+              id: "liquidity/add-address",
+              label: "Add Address"
+            },
+            {
+              type: "doc",
+              id: "liquidity/get-payment-methods",
+              label: "Get Payment Methods"
+            },
+            {
+              type: "doc",
+              id: "liquidity/get-payment-method-for-currency",
+              label: "Get Payment Method For Currency"
+            },
+            {
+              type: "doc",
+              id: "liquidity/get-addresses",
+              label: "Get Addresses"
+            },
+            {
+              type: "doc",
+              id: "liquidity/banks",
+              label: "Banks"
+            }
+          ]
+        }
+      ]
+    },
+    {
       type: "doc",
-      id: "error-handling",
-      label: "Error Handling"
+      id: "status-codes",
+      label: "Status Codes"
     }
   ]
 };

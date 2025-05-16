@@ -35,7 +35,7 @@ To create an account, send the following parameters to the below endpoint. Set `
 #### Response raw (json)
 ```json
 {
-    "status": 100,
+    "status": 200,
     "message": "Company added successfully"
 }
 ```

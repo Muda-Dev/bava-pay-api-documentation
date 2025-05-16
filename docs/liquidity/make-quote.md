@@ -9,7 +9,7 @@ Transaction Quote Request
 ### Request
 Method: POST
 ```json
-  {{URL}}/accounts/getInvoice
+  {{URL}}/accounts/generateQuote
 ```
 #### Body raw (json)
 ```json
@@ -32,7 +32,7 @@ Method: POST
 #### Response raw (json)
 ```json
 {
-    "status": 100,
+    "status": 200,
     "message": "Transaction record saved",
     "data": "d523ad72c89940e5bb6091518c91c413"
 }

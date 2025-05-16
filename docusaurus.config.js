@@ -42,17 +42,7 @@ const config = {
   ],
 
   plugins: [
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'liquidity',
-        path: 'docs-liquidity', // Path to the liquidity docs folder
-        routeBasePath: 'liquidity', // URL path for liquidity docs
-        sidebarPath: require.resolve('./sidebars-liquidity.js'),
-        editUrl:
-          'https://github.com/your-org/muda-api-doc/tree/main/docs-liquidity/',
-      },
-    ],
+    // Removed old docs-liquidity plugin config
   ],
 
   themeConfig: {
@@ -69,13 +59,7 @@ const config = {
           sidebarId: 'tutorialSidebar',
           position: 'left',
           label: 'Muda-Pay API',
-        },{
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Liquidity API',
-          docsPluginId: 'liquidity', // Specify the plugin ID for liquidity docs
-        },
+        }
       ],
     },
     prism: {

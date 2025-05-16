@@ -17,7 +17,7 @@ Paramaters: id for the transaction id
 #### Response raw (json)
 ```json
 {
-    "status": 100,
+    "status": 200,
     "message": "success",
     "data": {
         "id": 72,

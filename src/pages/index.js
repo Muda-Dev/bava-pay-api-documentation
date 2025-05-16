@@ -28,12 +28,7 @@ function HomepageHeader() {
           <Link
             className="button button--secondary button--lg"
             to="/intro">
-            Muda-Pay
-          </Link>
-          <Link
-            className="button button--secondary button--lg"
-            to="/liquidity/intro">
-            Liquidity Rail
+            Get Started
           </Link>
         </div>
       </div>

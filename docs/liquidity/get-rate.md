@@ -8,7 +8,7 @@ Get currency pairs exchange rate.
 
 ### Request
 
-Method: GET
+Method: POST
 ```json
   {{URL}}/accounts/getRate
 ```
@@ -25,7 +25,7 @@ Method: GET
 #### Response raw (json)
 ```json
 {
-    "status": 100,
+    "status": 200,
     "message": "success",
     "data": {
         "from": "USDT",

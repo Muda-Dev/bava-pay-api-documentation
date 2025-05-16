@@ -17,7 +17,7 @@ Id: The quote Id
 #### Response raw (json)
 ```json
 {
-    "status": 100,
+    "status": 200,
     "message": "success",
     "data": {
         "id": 74,
