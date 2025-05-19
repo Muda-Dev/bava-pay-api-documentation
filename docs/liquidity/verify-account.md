@@ -7,7 +7,7 @@ title: Verify Account
 Verify a bank account or mobile money account for payouts.
 
 **Method:** POST  
-**Endpoint:** {{URL}}v1/rail/accounts/verifyAccount
+**Endpoint:** `/v1/rail/accounts/verifyAccount`
 
 **Request Example:**
 ```json
