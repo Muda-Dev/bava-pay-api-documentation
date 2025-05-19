@@ -59,7 +59,7 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "error-handling",
+          id: "error-handling-guide",
           label: "Error Handling"
         }
       ]
@@ -155,8 +155,8 @@ const sidebars = {
             },
             {
               type: "doc",
-              id: "liquidity/banks",
-              label: "Banks"
+              id: "liquidity/verify-account",
+              label: "Verify Account"
             }
           ]
         }
@@ -170,4 +170,4 @@ const sidebars = {
   ]
 };
 
-export default sidebars;
+module.exports = sidebars;

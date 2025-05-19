@@ -1,5 +1,5 @@
 // @ts-check
-import { themes as prismThemes } from 'prism-react-renderer';
+const { themes } = require('prism-react-renderer');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -13,7 +13,7 @@ const config = {
 
   // GitHub pages deployment config.
   organizationName: 'muda',
-  projectName: 'New Age-api-doc',
+  projectName: 'bava-pay-api-documentation',
 
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
@@ -41,9 +41,7 @@ const config = {
     ],
   ],
 
-  plugins: [
-    // Removed old docs-liquidity plugin config
-  ],
+  plugins: [],
 
   themeConfig: {
     image: 'https://mudagroup.com/images/logo-sm.svg',
@@ -63,10 +61,10 @@ const config = {
       ],
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: themes.github,
+      darkTheme: themes.dracula,
     },
   },
 };
 
-export default config;
+module.exports = config;
