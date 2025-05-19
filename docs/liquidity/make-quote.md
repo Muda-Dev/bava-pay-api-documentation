@@ -13,7 +13,7 @@ Method: POST
 ```
 #### Body raw (json)
 ```json
-  {
+ {
   "provider_id": "2",
   "send_asset": "USDC",
   "send_amount": 1,
@@ -21,7 +21,9 @@ Method: POST
   "receive_currency": "UGX",
   "receive_amount": 3750.00,
   "service_id": "7",
-  "chain":"STELLAR",
+  "chain":"STELLAR",  
+  "source": "",
+  "wallet": "",
   "ex_rate": 3750.00,
   "receiver_address": "Kampala, Uganda",
   "payment_method_id": "1a95a475ec97147b0a51a2273f0bc94d1",
