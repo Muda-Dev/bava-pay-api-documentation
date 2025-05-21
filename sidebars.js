@@ -163,6 +163,22 @@ const sidebars = {
       ]
     },
     {
+      type: "category",
+      label: "Merchant Collections",
+      items: [
+        {
+          type: "doc",
+          id: "merchant-collections/overview",
+          label: "Overview"
+        },
+        {
+          type: "doc",
+          id: "merchant-collections/checkout-integration",
+          label: "Payment Checkout"
+        }
+      ]
+    },
+    {
       type: "doc",
       id: "status-codes",
       label: "Status Codes"
