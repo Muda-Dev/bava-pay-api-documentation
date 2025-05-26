@@ -34,13 +34,24 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "direct-payout",
-          label: "Direct Payout"
-        },
-        {
-          type: "doc",
           id: "direct-collection",
           label: "Direct Collection"
+        },
+        {
+          type: "category",
+          label: "Payouts",
+          items: [
+            {
+              type: "doc",
+              id: "direct-payout",
+              label: "Direct Payouts"
+            },
+            {
+              type: "doc",
+              id: "payouts/extras",
+              label: "Extras"
+            }
+          ]
         },
         {
           type: "doc",
@@ -62,6 +73,7 @@ const sidebars = {
           id: "error-handling-guide",
           label: "Error Handling"
         }
+       
       ]
     },
     {
