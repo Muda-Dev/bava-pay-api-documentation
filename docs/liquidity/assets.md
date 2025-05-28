@@ -16,8 +16,8 @@ We support the following crypto assets:
 - USDT (Ethereum)
 - USDT (Binance Smart Chain / BSC)
 - USDC (Stellar)
-- cNGNG (Binance Smart Chain / BSC)
-- CNGN (Bantut Blockchain)
+- cNGN (Binance Smart Chain / BSC)
+- cNGN (Bantu Blockchain)
 
 **Request Example:**
 ```

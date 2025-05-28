@@ -10,6 +10,6 @@ Below are the fiat currencies supported for payouts on the Liquidity Rail, along
 |---------------|----------|----------------------|
 | Ghana         | GHS      | Bank, Mobile Money   |
 | South Africa  | ZAR      | Mobile Money         |
-| Nigeria       | NGNG     | Bank, Mobile Money   |
+| Nigeria       | NGN     | Bank, Mobile Money   |
 | Uganda        | UGX      | Mobile Money         |
 | Kenya         | KES      | Mobile Money         | 
