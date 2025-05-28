@@ -34,24 +34,13 @@ const sidebars = {
         },
         {
           type: "doc",
-          id: "direct-collection",
-          label: "Direct Collection"
+          id: "direct-payout",
+          label: "Direct Payout"
         },
         {
-          type: "category",
-          label: "Payouts",
-          items: [
-            {
-              type: "doc",
-              id: "direct-payout",
-              label: "Direct Payouts"
-            },
-            {
-              type: "doc",
-              id: "payouts/extras",
-              label: "Extras"
-            }
-          ]
+          type: "doc",
+          id: "direct-collection",
+          label: "Direct Collection"
         },
         {
           type: "doc",
@@ -72,8 +61,55 @@ const sidebars = {
           type: "doc",
           id: "error-handling-guide",
           label: "Error Handling"
+        },
+        {
+          type: "category",
+          label: "Payouts",
+          items: [
+            {
+              type: "doc",
+              id: "direct-payout",
+              label: "Direct Payouts"
+            },
+            {
+              type: "doc",
+              id: "payouts/extras",
+              label: "Extras"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Direct Collections",
+          items: [
+            {
+              type: "doc",
+              id: "direct-collection",
+              label: "Direct Collections"
+            },
+            {
+              type: "doc",
+              id: "direct-collections/supported-currencies",
+              label: "Supported Currencies"
+            }
+          ]
+        },
+        {
+          type: "category",
+          label: "Deposits",
+          items: [
+            {
+              type: "doc",
+              id: "deposits/asset-deposits",
+              label: "Asset Deposits"
+            },
+            {
+              type: "doc",
+              id: "deposits/bank-deposits",
+              label: "Bank Deposits"
+            }
+          ]
         }
-       
       ]
     },
     {
@@ -100,6 +136,11 @@ const sidebars = {
           type: "doc",
           id: "liquidity/assets",
           label: "Assets"
+        },
+        {
+          type: "doc",
+          id: "liquidity/supported-payout-currencies",
+          label: "Supported Payout Currencies"
         },
         {
           type: "doc",
