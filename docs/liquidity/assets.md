@@ -9,6 +9,16 @@ Retrieve a list of supported assets (cryptocurrencies or tokens).
 **Method:** GET  
 **Endpoint:** https://api.muda.tech/v1/rail/accounts/assets
 
+## Supported Assets
+
+We support the following crypto assets:
+
+- USDT (Ethereum)
+- USDT (Binance Smart Chain / BSC)
+- USDC (Stellar)
+- cNGN (Binance Smart Chain / BSC)
+- cNGN (Bantu Blockchain)
+
 **Request Example:**
 ```
 GET /accounts/assets

@@ -30,8 +30,6 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           routeBasePath: '/', // Makes documentation the homepage
-          editUrl:
-            'https://github.com/your-org/muda-api-doc/tree/main/docs/',
         },
         blog: false, // Disable the blog if it's not needed
         theme: {
