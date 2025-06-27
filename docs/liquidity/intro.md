@@ -6,7 +6,7 @@ sidebar_position: 1
 
 Welcome to the Muda Liquidity Rail API documentation. This section covers all endpoints for managing liquidity, payment methods, rates, quotes, and providers.
 
-**Base URL:** https://api.muda.tech/v1/rail/
+**Base URL:** {{BASE_URL}}/v1/rail/
 
 Use this base URL for all endpoints described in this section.
 

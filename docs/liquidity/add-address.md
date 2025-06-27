@@ -7,7 +7,7 @@ title: Add Address
 Add a new blockchain address for payouts or collections.
 
 **Method:** POST  
-**Endpoint:** https://api.muda.tech/v1/rail/accounts/addAddress
+**Endpoint:** {{BASE_URL}}/v1/rail/accounts/addAddress
 
 **Request Example:**
 ```json

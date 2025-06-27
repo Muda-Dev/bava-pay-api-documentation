@@ -7,7 +7,7 @@ title: Payments
 
 This section contains API details for **Get Transaction by Reference ID**.
 
-### 1. GET https://ag-api.bavana.site/payment/transactionReference/XCVrBH7654BV6B9V
+### 1. GET {{BASE_URL}}/payment/transactionReferenceId/XCVrBH7654BV6B9V
 
 **Description:**  
 Fetch transaction details by reference ID.
@@ -31,7 +31,7 @@ Fetch transaction details by reference ID.
       "asset_code": "cUGX",
       "currency": "UGX",
       "sender_account": "GBPREREREREOOPOPOOREOPREOREOPROPROEROP",
-      "receiver_account": "256787719618",
+      "receiver_account": "256711111111",
       "memo": "7e4ebba4-b780-42b1-a112-c9c9f9ed8642",
       "status": "SUCCESS",
       "created_at": "2025-02-20T16:22:55.000Z"

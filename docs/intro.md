@@ -21,7 +21,7 @@ Authorization: Bearer <your_jwt_token>
 ## Base URL
 
 ```
-https://api.muda.tech
+https://api.muda.tech/v1
 ```
 
 ---

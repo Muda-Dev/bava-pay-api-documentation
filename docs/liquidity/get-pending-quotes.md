@@ -8,7 +8,7 @@ title: Get Pending Quotes
 Retrieve all pending quotes for the authenticated account.
 
 **Method:** GET  
-**Endpoint:** `https://api.muda.tech/v1/rail/accounts/getPendingQuotes`
+**Endpoint:** `{{BASE_URL}}/v1/rail/accounts/getPendingQuotes`
 
 **Request Example:**
 ```

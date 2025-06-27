@@ -18,7 +18,7 @@ Initiates a direct payout transaction to transfer funds to a specified account.
     "trans_type": "PUSH",
     "currency": "UGX",
     "product_id": 10011,
-    "account_number": "256787719618",
+    "account_number": "256711111111",
     "extra_data":{}
   }
   ```
@@ -32,7 +32,7 @@ Initiates a direct payout transaction to transfer funds to a specified account.
       "amount": 1000,
       "currency": "UGX",
       "status": "pending",
-      "account_number": "256787719618"
+      "account_number": "256711111111"
     }
   }
   ```

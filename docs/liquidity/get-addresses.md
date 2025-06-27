@@ -7,7 +7,7 @@ title: Get Addresses
 Retrieve all blockchain addresses associated with an account.
 
 **Method:** GET  
-**Endpoint:** https://api.muda.tech/v1/rail/accounts/getAddresses
+**Endpoint:** {{BASE_URL}}/v1/rail/accounts/getAddresses
 
 **Request Example:**
 ```

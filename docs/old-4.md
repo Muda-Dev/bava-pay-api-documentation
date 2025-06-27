@@ -32,7 +32,7 @@ public_key: The public key for the transaction.
   "trans_type": "PULL",
   "currency": "UGX",
   "product_id": "10000",
-  "account_number": "256787719618",
+  "account_number": "256711111111",
   "public_key": "GBPREREREREOOPOPOOREOPREOREOPROPROEROP"
 }
 ```
@@ -53,7 +53,7 @@ public_key: The public key for the transaction.
     "asset_code": "cUGX",
     "currency": "UGX",
     "sender_account": "GBPREREREREOOPOPOOREOPREOREOPROPROEROP",
-    "receiver_account": "256787719618",
+    "receiver_account": "256711111111",
     "memo": "e0c4d6e7-d8f4-4478-9eed-524372d41365",
     "status": "pending"
   }
