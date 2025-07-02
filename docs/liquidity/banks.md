@@ -7,7 +7,7 @@ title: Banks
 Retrieve a list of supported banks for a given currency.
 
 **Method:** GET  
-**Endpoint:** {{BASE_URL}}/v1/rail/accounts/banks?currency=KES
+**Endpoint:** `{{BASE_URL}}`/v1/rail/accounts/banks?currency=KES
 
 **Request Example:**
 ```

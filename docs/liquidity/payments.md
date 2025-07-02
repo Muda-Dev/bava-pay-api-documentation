@@ -7,7 +7,7 @@ title: Payments
 
 This section contains API details for **Get Transaction by Reference ID**.
 
-### 1. GET {{BASE_URL}}/payment/transactionReferenceId/XCVrBH7654BV6B9V
+### 1. GET `{{BASE_URL}}`/payment/transactionReferenceId/XCVrBH7654BV6B9V
 
 **Description:**  
 Fetch transaction details by reference ID.

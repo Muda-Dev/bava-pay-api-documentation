@@ -7,7 +7,7 @@ title: Assets
 Retrieve a list of supported assets (cryptocurrencies or tokens).
 
 **Method:** GET  
-**Endpoint:** {{BASE_URL}}/v1/rail/accounts/assets
+**Endpoint:** `{{BASE_URL}}`/v1/rail/accounts/assets
 
 ## Supported Assets
 
