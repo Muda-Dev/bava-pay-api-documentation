@@ -8,7 +8,9 @@ The Muda Pay API uses standard HTTP status codes in its responses. Below are the
 
 - **200 Success**: The request was successful and the response contains the requested data.
 - **201 Created**: The request was successful and a new resource was created.
-- **400 Bad Request**: The request was invalid or cannot be served.
+- **202 Transaction Pending**: The request was successful and transaction is pending.
+- **210 Verification required**: Transaction on hold and requires verification.
+- **400 Bad Request**: Validation error.
 - **401 Unauthorized**: Authentication failed or was not provided.
 - **403 Forbidden**: The request is understood, but it has been refused or access is not allowed.
 - **404 Not Found**: The requested resource could not be found.
@@ -17,9 +19,7 @@ The Muda Pay API uses standard HTTP status codes in its responses. Below are the
 - **429 Too Many Requests**: Rate limiting has been applied.
 - **500 Internal Server Error**: An error occurred on the server.
 
-
 ## Example Response Format
-
 ```json
 {
   "status": 200,
