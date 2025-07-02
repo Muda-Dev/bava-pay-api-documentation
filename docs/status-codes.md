@@ -17,6 +17,7 @@ The Muda Pay API uses standard HTTP status codes in its responses. Below are the
 - **429 Too Many Requests**: Rate limiting has been applied.
 - **500 Internal Server Error**: An error occurred on the server.
 
+
 ## Example Response Format
 
 ```json
