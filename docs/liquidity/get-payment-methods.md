@@ -7,7 +7,7 @@ title: Get Payment Methods
 Retrieve all payment methods associated with an account.
 
 **Method:** GET  
-**Endpoint:** {{BASE_URL}}/v1/rail/accounts/getPaymentMethods
+**Endpoint:** `{{BASE_URL}}`/v1/rail/accounts/getPaymentMethods
 
 **Request Example:**
 ```

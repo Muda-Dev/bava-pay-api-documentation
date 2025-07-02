@@ -7,7 +7,7 @@ title: Get Payment Method For Currency
 Retrieve payment methods for a specific currency.
 
 **Method:** GET  
-**Endpoint:** {{BASE_URL}}/v1/rail/accounts/getPaymentMethodForCurrency/UGX
+**Endpoint:** `{{BASE_URL}}`/v1/rail/accounts/getPaymentMethodForCurrency/UGX
 
 **Request Example:**
 ```
