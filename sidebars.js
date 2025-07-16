@@ -55,6 +55,11 @@ const sidebars = {
         {
           type: "doc",
           id: "get-transactions",
+          label: "Get Transactions"
+        },
+        {
+          type: "doc",
+          id: "get-transaction",
           label: "Get Transaction"
         },
         {
@@ -118,98 +123,109 @@ const sidebars = {
       items: [
         {
           type: "category",
-          label: "Get Started",
+          label: "Client",
           items: [
             {
               type: "doc",
-              id: "liquidity/become-a-provider-get-started",
-              label: "Become a Provider"
+              id: "liquidity/1.0-get-assets",
+              label: "1.0 Get Assets"
+            },
+            {
+              type: "doc",
+              id: "liquidity/1.1-get-services",
+              label: "1.1 Get Services"
+            },
+            {
+              type: "doc",
+              id: "liquidity/1.2-get-service",
+              label: "1.2 Get Service"
+            },
+            {
+              type: "doc",
+              id: "liquidity/2.0-get-all-providers",
+              label: "2.0 Get All Providers"
+            },
+            {
+              type: "doc",
+              id: "liquidity/2.1-single-provider",
+              label: "2.1 Single Provider"
+            },
+            {
+              type: "doc",
+              id: "liquidity/2.2-get-all-providers-by-service",
+              label: "2.2 Get All Providers By Service"
+            },
+            {
+              type: "doc",
+              id: "liquidity/3.0-get-rate",
+              label: "3.0 Get Rate"
+            },
+            {
+              type: "doc",
+              id: "liquidity/3.1-book-rate",
+              label: "3.1 Book Rate"
+            },
+            {
+              type: "doc",
+              id: "liquidity/3.2-confirm-rate",
+              label: "3.2 Confirm Rate"
+            },
+            {
+              type: "doc",
+              id: "liquidity/3.3-generate-direct-quote",
+              label: "3.3 Generate Direct Quote"
+            },
+            {
+              type: "doc",
+              id: "liquidity/4.0-get-transaction",
+              label: "4.0 Get Transaction"
+            },
+            {
+              type: "category",
+              label: "Payment Methods",
+              items: [
+                {
+                  type: "doc",
+                  id: "liquidity/add-payment-method",
+                  label: "Add Payment Method"
+                },
+                {
+                  type: "doc",
+                  id: "liquidity/get-payment-methods",
+                  label: "Get Payment Methods"
+                },
+                {
+                  type: "doc",
+                  id: "liquidity/get-payment-method-for-currency",
+                  label: "Get Payment Method for Currency"
+                },
+                {
+                  type: "doc",
+                  id: "liquidity/get-banks",
+                  label: "Get Banks"
+                }
+              ]
             }
           ]
         },
         {
-          type: "doc",
-          id: "liquidity/get-all-services",
-          label: "Get All Services"
-        },
-        {
-          type: "doc",
-          id: "liquidity/assets",
-          label: "Assets"
-        },
-        {
-          type: "doc",
-          id: "liquidity/supported-payout-currencies",
-          label: "Supported Payout Currencies"
-        },
-        {
-          type: "doc",
-          id: "liquidity/banks",
-          label: "Banks"
-        },
-        {
-          type: "doc",
-          id: "liquidity/get-rate",
-          label: "Post Rate"
-        },
-        {
-          type: "doc",
-          id: "liquidity/get-providers",
-          label: "Get Providers"
-        },
-        {
-          type: "doc",
-          id: "liquidity/make-quote",
-          label: "Send Money"
-        },
-        {
-          type: "doc",
-          id: "liquidity/get-payout-transaction",
-          label: "Get Transaction"
-        },
-        {
-          type: "doc",
-          id: "liquidity/cancel-quote",
-          label: "Cancel Quote"
-        },
-        {
-          type: "doc",
-          id: "liquidity/get-pending-quotes",
-          label: "Get Pending Quotes"
-        },
-        {
           type: "category",
-          label: "Payment Methods",
+          label: "Provider",
           items: [
             {
               type: "doc",
-              id: "liquidity/add-payment-method",
-              label: "Add Payment Method"
+              id: "liquidity/provider-side",
+              label: "Provider Side Endpoints"
             },
             {
               type: "doc",
-              id: "liquidity/add-address",
-              label: "Add Address"
+              id: "liquidity/register-as-provider",
+              label: "Becoming a Provider"
             },
             {
               type: "doc",
-              id: "liquidity/get-payment-methods",
-              label: "Get Payment Methods"
-            },
-            {
-              type: "doc",
-              id: "liquidity/get-payment-method-for-currency",
-              label: "Get Payment Method For Currency"
-            },
-            {
-              type: "doc",
-              id: "liquidity/get-addresses",
-              label: "Get Addresses"
-            },
-            {
-              type: "doc",
-              id: "liquidity/verify-account",
-              label: "Verify Account"
+              id: "liquidity/provider-authentication",
+              label: "Authentication"
             }
           ]
         }

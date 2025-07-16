@@ -36,80 +36,143 @@ const sidebarsLiquidity = {
       },
       {
         type: "category",
-        label: "Provider",
+        label: "Client Side",
         items: [
           {
             type: "doc",
-            id: "register-as-provider",
-            label: "Becoming a Provider"
-          }/* ,
-          {
-            type: "doc",
-            id: "provider-authentication",
-            label: "Authentication"
-          } */
-        ]
-      },
-      {
-        type: "category",
-        label: "Clients",
-        items: [
-          {
-            type: "doc",
-            id: "client-registration",
-            label: "Registration"
+            id: "client-side",
+            label: "Client Side Endpoints"
           },
           {
             type: "doc",
             id: "client-authentication",
             label: "Authentication"
+          },
+          {
+            type: "doc",
+            id: "client-registration",
+            label: "Registration"
           }
         ]
       },
       {
         type: "category",
-        label: "Guides",
+        label: "Provider Side",
         items: [
           {
-            type: "category",
-            label: "Payments",
-            items: [
-  
-              {
-                type: "doc",
-                id: "make-quote",
-                label: "Make Quote"
-              },
-              {
-                type: "doc",
-                id: "get-rate",
-                label: "Get Rate"
-              },
-              {
-                type: "doc",
-                id: "get-payout-transaction",
-                label: "Get Payout Transaction"
-              },
-              {
-                type: "doc",
-                id: "cancel-quote",
-                label: "Cancel Quote"
-              },
-              {
-                type: "doc",
-                id: "get-providers",
-                label: "Get Providers"
-              },
-              {
-                type: "doc",
-                id: "add-payment-method",
-                label: "Add Payment Method"
-              }            
-            ]
+            type: "doc",
+            id: "provider-side",
+            label: "Provider Side Endpoints"
+          },
+          {
+            type: "doc",
+            id: "provider-core-endpoints",
+            label: "Core Endpoints"
+          },
+          {
+            type: "doc",
+            id: "provider-transactions",
+            label: "Transaction Management"
+          },
+          {
+            type: "doc",
+            id: "provider-webhooks",
+            label: "Webhook Integration"
+          },
+          {
+            type: "doc",
+            id: "provider-implementation",
+            label: "Implementation Guide"
+          },
+          {
+            type: "doc",
+            id: "register-as-provider",
+            label: "Becoming a Provider"
+          },
+          {
+            type: "doc",
+            id: "provider-authentication",
+            label: "Authentication"
           }
-  
-  
-          
+        ]
+      },
+      {
+        type: "category",
+        label: "Payment Methods",
+        items: [
+          {
+            type: "doc",
+            id: "add-payment-method",
+            label: "Add Payment Method"
+          },
+          {
+            type: "doc",
+            id: "get-payment-methods",
+            label: "Get Payment Methods"
+          },
+          {
+            type: "doc",
+            id: "get-payment-method-for-currency",
+            label: "Get Payment Method for Currency"
+          }
+        ]
+      },
+      {
+        type: "category",
+        label: "Transactions",
+        items: [
+          {
+            type: "doc",
+            id: "get-payout-transaction",
+            label: "Get Payout Transaction"
+          },
+          {
+            type: "doc",
+            id: "get-pending-quotes",
+            label: "Get Pending Quotes"
+          },
+          {
+            type: "doc",
+            id: "cancel-quote",
+            label: "Cancel Quote"
+          }
+        ]
+      },
+      {
+        type: "category",
+        label: "Rates & Quotes",
+        items: [
+          {
+            type: "doc",
+            id: "get-rate",
+            label: "Get Rate"
+          },
+          {
+            type: "doc",
+            id: "make-quote",
+            label: "Make Quote"
+          },
+          {
+            type: "doc",
+            id: "get-quote",
+            label: "Get Quote"
+          }
+        ]
+      },
+      {
+        type: "category",
+        label: "Services & Providers",
+        items: [
+          {
+            type: "doc",
+            id: "get-all-services",
+            label: "Get All Services"
+          },
+          {
+            type: "doc",
+            id: "get-providers",
+            label: "Get Providers"
+          }
         ]
       }
     ]
