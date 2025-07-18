@@ -10,7 +10,7 @@ Technical requirements and best practices for implementing provider endpoints.
 
 ## Boilerplate
 
-Access our provider boilerplate at: [Liquidity Rail Provider Boilerplate](https://github.com/muda-tech/liquidity-rail-provider-boilerplate)
+Access our provider boilerplate at: [Liquidity Rail Provider Boilerplate](https://github.com/Muda-Dev/lr-provider-boilerplate)
 
 The boilerplate provides a complete Node.js TypeScript implementation with:
 - All required provider endpoints

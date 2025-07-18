@@ -72,7 +72,7 @@ A provider might offer:
 After approval, you must implement the standard provider endpoints. We provide a boilerplate implementation to help you get started quickly.
 
 ### GitHub Boilerplate
-Access our provider boilerplate at: [Liquidity Rail Provider Boilerplate](https://github.com/muda-payments/liquidity-rail-provider-boilerplate)
+Access our provider boilerplate at: [Liquidity Rail Provider Boilerplate](https://github.com/Muda-Dev/lr-provider-boilerplate)
 
 This boilerplate includes:
 - Standard endpoint implementations

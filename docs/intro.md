@@ -308,8 +308,7 @@ Get a list of available service providers.
 ```json
 {
   "asset_code":"USDT",
-  "currency":"UGX",
-  "company_id":22
+  "currency":"UGX"
 }
 ```
 
