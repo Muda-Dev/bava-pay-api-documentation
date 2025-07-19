@@ -221,29 +221,8 @@ const sidebars = {
               type: "doc",
               id: "liquidity/register-as-provider",
               label: "Becoming a Provider"
-            },
-            {
-              type: "doc",
-              id: "liquidity/provider-authentication",
-              label: "Authentication"
             }
           ]
-        }
-      ]
-    },
-    {
-      type: "category",
-      label: "Merchant Collections",
-      items: [
-        {
-          type: "doc",
-          id: "merchant-collections/overview",
-          label: "Overview"
-        },
-        {
-          type: "doc",
-          id: "merchant-collections/checkout-integration",
-          label: "Payment Checkout"
         }
       ]
     },
