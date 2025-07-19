@@ -59,36 +59,24 @@ This specification covers:
 
 ## Authentication
 
-### Public-Private Key Authentication
-All provider endpoints require authentication using public-private key pairs. MUDA will provide each provider with:
-
-- **Public Key**: Used to verify requests from MUDA
-- **Private Key**: Used to sign responses to MUDA
-- **Bearer Token**: JWT token for API authentication
+### Bearer Token Authentication
+All provider endpoints require authentication using a JWT Bearer token provided by MUDA.
 
 ### Authentication Headers
 ```http
 Authorization: Bearer <your-bearer-token>
-X-Provider-Signature: <signed-request-body>
-X-Provider-Timestamp: <unix-timestamp>
-```
-
-### Request Signing
-Providers must sign all requests using their private key:
-
-```typescript
-const signature = crypto
-  .createSign('RSA-SHA256')
-  .update(JSON.stringify(requestBody) + timestamp)
-  .sign(privateKey, 'base64');
 ```
 
 ### Security Requirements
 - **HTTPS Only**: All endpoints must use TLS 1.2 or higher
-- **Key Rotation**: Private keys must be rotated every 90 days
-- **Secure Storage**: Private keys must be stored in secure key management systems
-- **Request Validation**: All requests must be validated and signed
-- **Timestamp Validation**: Requests older than 5 minutes are rejected
+- **Secure Storage**: Bearer tokens must be stored securely
+- **Request Validation**: All requests must be validated
+- **Timestamp Validation**: Requests older than 10 minutes are rejected
+
+### Muda webhook signing
+Muda signs all outgoing webhooks to providers using an HMAC signature. Each webhook request includes an `X-Signature` header containing the signature, which is generated using a shared secret (provided to the provider out-of-band) and the raw request body.
+
+**Signature Header Example:**
 
 ## Core Endpoints
 
@@ -346,6 +334,7 @@ Providers must whitelist MUDA's IP addresses:
 Content-Type: application/json
 X-Webhook-Signature: <hmac-signature>
 X-Webhook-Timestamp: <unix-timestamp>
+Authorization: Bearer <muda-webhook-token>
 ```
 
 ### Fraud Prevention & Consequences
@@ -500,7 +489,7 @@ X-Webhook-Timestamp: <unix-timestamp>
 MUDA will send webhook events to providers for transaction updates and notifications.
 
 #### MUDA Webhook Security
-All webhook events from MUDA are signed and must be validated by providers:
+All webhook events from MUDA are signed and authenticated. MUDA sends authentication in webhook headers:
 
 **Endpoint**: `{{YOUR_WEBHOOK_ENDPOINT}}/muda-events`
 
@@ -510,6 +499,7 @@ Content-Type: application/json
 X-Muda-Signature: <hmac-signature>
 X-Muda-Timestamp: <unix-timestamp>
 X-Muda-Event-Type: <event-type>
+Authorization: Bearer <muda-webhook-token>
 ```
 
 #### MUDA Webhook Validation
@@ -776,13 +766,13 @@ Providers must implement these endpoints:
 
 ### Security Requirements
 - **HTTPS Only**: All endpoints must use TLS 1.2 or higher
-- **Public-Private Key Authentication**: Implement RSA-SHA256 signing
+- **Bearer Token Authentication**: Use JWT Bearer tokens for API authentication
 - **Webhook Signing**: Use HMAC-SHA256 for webhook payloads
 - **IP Whitelisting**: Whitelist MUDA's IP addresses
 - **Rate Limiting**: Implement rate limiting (1000 requests/hour)
 - **Input Validation**: Validate all request parameters
 - **Secure Error Handling**: Never expose sensitive information in errors
-- **Key Management**: Store private keys in secure key management systems
+- **Token Management**: Store Bearer tokens securely
 - **Audit Logging**: Log all API requests and responses
 - **Fraud Prevention**: Implement strict verification before reporting success
 
