@@ -338,9 +338,8 @@ const signature = crypto
 
 #### IP Whitelisting
 Providers must whitelist MUDA's IP addresses:
-- `52.23.45.67/32` (Primary)
-- `52.23.45.68/32` (Secondary)
-- `52.23.45.69/32` (Backup)
+- `54.243.89.55/32` (Stage)
+- `13.**.**.**/32` (Production) -  Full Ip provided on go live
 
 #### Webhook Headers
 ```http
@@ -495,6 +494,45 @@ X-Webhook-Timestamp: <unix-timestamp>
     }
 }
 ```
+
+### MUDA Webhooks to Providers
+
+MUDA will send webhook events to providers for transaction updates and notifications.
+
+#### MUDA Webhook Security
+All webhook events from MUDA are signed and must be validated by providers:
+
+**Endpoint**: `{{YOUR_WEBHOOK_ENDPOINT}}/muda-events`
+
+**Headers**:
+```http
+Content-Type: application/json
+X-Muda-Signature: <hmac-signature>
+X-Muda-Timestamp: <unix-timestamp>
+X-Muda-Event-Type: <event-type>
+```
+
+#### MUDA Webhook Validation
+Providers must validate all incoming webhooks from MUDA:
+
+```typescript
+const isValidWebhook = (payload: string, signature: string, timestamp: string) => {
+  const expectedSignature = crypto
+    .createHmac('sha256', mudaWebhookKey)
+    .update(payload + timestamp)
+    .digest('hex');
+  
+  return crypto.timingSafeEqual(
+    Buffer.from(signature, 'hex'),
+    Buffer.from(expectedSignature, 'hex')
+  );
+};
+```
+
+#### MUDA Webhook Events
+- **Transaction Updates**: Status changes and confirmations
+- **Quote Updates**: Rate changes and expirations
+- **System Notifications**: Maintenance and service updates
 
 ## Data Models
 
