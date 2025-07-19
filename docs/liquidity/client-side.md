@@ -324,3 +324,33 @@ Generate a direct quote for a transaction.
     "sending_address": "TXYZabc1234567890address"
 }
 ```
+
+## 4.0 Verify Account
+
+Verify bank account details before processing transactions.
+
+**Method:** POST  
+**Endpoint:** `{{URL}}v1/rail/accounts/verifyAccount`
+
+**Request Body:**
+```json
+{
+    "provider_type": "bank",
+    "bank_code": "100",
+    "account_number": "10291090",
+    "currency": "NGN"
+}
+```
+
+**Response Example:**
+```json
+{
+    "status": 200,
+    "message": "success",
+    "data": {
+        "accountName": "JOHN DOE",
+        "bank_code": "2345",
+        "isValid": true
+    }
+}
+```

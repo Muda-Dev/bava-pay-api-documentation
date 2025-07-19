@@ -219,11 +219,6 @@ const sidebars = {
             },
             {
               type: "doc",
-              id: "liquidity/provider-side",
-              label: "Provider Side Endpoints"
-            },
-            {
-              type: "doc",
               id: "liquidity/register-as-provider",
               label: "Becoming a Provider"
             },

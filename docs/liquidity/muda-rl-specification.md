@@ -59,17 +59,36 @@ This specification covers:
 
 ## Authentication
 
-### API Key Authentication
-All provider endpoints require authentication using API keys:
+### Public-Private Key Authentication
+All provider endpoints require authentication using public-private key pairs. MUDA will provide each provider with:
 
-```http
-X-API-Key: your-provider-api-key
-X-API-Secret: your-provider-api-secret
-```
+- **Public Key**: Used to verify requests from MUDA
+- **Private Key**: Used to sign responses to MUDA
+- **Bearer Token**: JWT token for API authentication
 
 ### Authentication Headers
-- `X-API-Key`: Provider's unique API key
-- `X-API-Secret`: Provider's API secret for request signing
+```http
+Authorization: Bearer <your-bearer-token>
+X-Provider-Signature: <signed-request-body>
+X-Provider-Timestamp: <unix-timestamp>
+```
+
+### Request Signing
+Providers must sign all requests using their private key:
+
+```typescript
+const signature = crypto
+  .createSign('RSA-SHA256')
+  .update(JSON.stringify(requestBody) + timestamp)
+  .sign(privateKey, 'base64');
+```
+
+### Security Requirements
+- **HTTPS Only**: All endpoints must use TLS 1.2 or higher
+- **Key Rotation**: Private keys must be rotated every 90 days
+- **Secure Storage**: Private keys must be stored in secure key management systems
+- **Request Validation**: All requests must be validated and signed
+- **Timestamp Validation**: Requests older than 5 minutes are rejected
 
 ## Core Endpoints
 
@@ -116,11 +135,20 @@ X-API-Secret: your-provider-api-secret
 {
     "quote_id": "q1234567890",
     "reference_id": "REF987654321",
-    "payment_method_id": "103382b71a39341f18c05d8fa86476efc",
+    "payment_method": {
+        "type": "mobile_money",
+        "currency": "UGX",
+        "phone_number": "0772123456",
+        "country_code": "UG",
+        "network": "MTN",
+        "account_name": "John Doe"
+    },
     "sending_address": "0x1a2b3c4d5e6f7g8h9i0j",
     "source": "exchange"
 }
 ```
+
+**Note**: The `payment_method` object contains the complete payment details that the provider needs to process the transaction. MUDA stores these payment methods and sends the full object to providers.
 
 **Response**:
 ```json
@@ -296,6 +324,48 @@ Providers must send status updates to MUDA's webhook endpoint:
 
 **Endpoint**: `https://api.muda.tech/v1/rail/accounts/events`
 
+### Webhook Security Requirements
+
+#### Webhook Signing Key
+MUDA will provide each provider with a unique webhook signing key. All webhook payloads must be signed using HMAC-SHA256:
+
+```typescript
+const signature = crypto
+  .createHmac('sha256', webhookSigningKey)
+  .update(JSON.stringify(payload))
+  .digest('hex');
+```
+
+#### IP Whitelisting
+Providers must whitelist MUDA's IP addresses:
+- `52.23.45.67/32` (Primary)
+- `52.23.45.68/32` (Secondary)
+- `52.23.45.69/32` (Backup)
+
+#### Webhook Headers
+```http
+Content-Type: application/json
+X-Webhook-Signature: <hmac-signature>
+X-Webhook-Timestamp: <unix-timestamp>
+```
+
+### Fraud Prevention & Consequences
+
+#### False Transaction Reporting
+**CRITICAL**: Providers must never report successful transactions unless funds have actually been sent. Consequences of false reporting include:
+
+- **Immediate Suspension**: Provider account suspended for 24-48 hours
+- **Financial Penalties**: Fines up to 10x the transaction amount
+- **Legal Action**: Potential legal proceedings for fraud
+- **Permanent Ban**: Repeated violations result in permanent provider removal
+- **Reputation Damage**: Public disclosure of violations
+
+#### Verification Requirements
+- **Crypto Transactions**: Must verify blockchain confirmation (minimum 3 confirmations)
+- **Fiat Transactions**: Must verify bank/mobile money confirmation
+- **Documentation**: Must maintain detailed transaction logs for 7 years
+- **Audit Trail**: All transactions must have complete audit trails
+
 ### Webhook Events
 
 #### Crypto Received Event
@@ -304,6 +374,8 @@ Providers must send status updates to MUDA's webhook endpoint:
     "eventType": "crypto_received",
     "provider_id": "your-provider-id",
     "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
     "data": {
         "amount": "100.00",
         "chain": "BSC",
@@ -311,7 +383,8 @@ Providers must send status updates to MUDA's webhook endpoint:
         "from_address": "0xfromaddress...",
         "to_address": "0xtoaddress...",
         "asset_code": "USDC",
-        "fee": "0.0001"
+        "fee": "0.0001",
+        "confirmations": 6
     }
 }
 ```
@@ -322,6 +395,8 @@ Providers must send status updates to MUDA's webhook endpoint:
     "eventType": "fiat_sent",
     "provider_id": "your-provider-id",
     "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
     "status": "SUCCESS",
     "data": {
         "amount": "50000.00",
@@ -334,7 +409,89 @@ Providers must send status updates to MUDA's webhook endpoint:
         "network": "MTN",
         "country": "UG",
         "receiver_name": "John Doe",
-        "fee": "1000.00"
+        "fee": "1000.00",
+        "transaction_id": "MTN-TX-123456789"
+    }
+}
+```
+
+#### Transaction Failed Event
+```json
+{
+    "eventType": "transaction_failed",
+    "provider_id": "your-provider-id",
+    "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
+    "status": "FAILED",
+    "data": {
+        "error_code": "INSUFFICIENT_FUNDS",
+        "error_message": "Provider lacks sufficient liquidity",
+        "stage": "PROCESSING_PAYOUT",
+        "refund_required": true,
+        "crypto_amount": "100.00",
+        "refund_address": "0xrefundaddress..."
+    }
+}
+```
+
+#### Quote Expired Event
+```json
+{
+    "eventType": "quote_expired",
+    "provider_id": "your-provider-id",
+    "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
+    "status": "EXPIRED",
+    "data": {
+        "expired_at": "2024-05-16T12:45:00Z",
+        "reason": "No payment received within timeout period"
+    }
+}
+```
+
+#### Fiat Received Event (Offramp)
+```json
+{
+    "eventType": "fiat_received",
+    "provider_id": "your-provider-id",
+    "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
+    "data": {
+        "amount": "50000.00",
+        "currency": "UGX",
+        "reference_id": "REF-987654321",
+        "account_number": "0772123456",
+        "payment_type": "mobile_money",
+        "payment_method": "MTN Uganda",
+        "network": "MTN",
+        "country": "UG",
+        "sender_name": "John Doe",
+        "transaction_id": "MTN-TX-123456789"
+    }
+}
+```
+
+#### Crypto Sent Event (Offramp)
+```json
+{
+    "eventType": "crypto_sent",
+    "provider_id": "your-provider-id",
+    "quote_id": "quote-id-123",
+    "signature": "hmac-signature-here",
+    "timestamp": 1640995200,
+    "status": "SUCCESS",
+    "data": {
+        "amount": "100.00",
+        "chain": "BSC",
+        "hash": "0x1234567890abcdef...",
+        "from_address": "0xprovideraddress...",
+        "to_address": "0xuseraddress...",
+        "asset_code": "USDC",
+        "fee": "0.0001",
+        "confirmations": 1
     }
 }
 ```
@@ -421,6 +578,120 @@ interface MobileMoneyPayment {
 }
 ```
 
+## Transaction Status Codes & Lifecycle
+
+### Offramp Transaction Status Flow (Fiat-to-Crypto)
+```
+PENDING → FIAT_RECEIVED → PROCESSING_CRYPTO → CRYPTO_QUEUED → TRANSACTION_SUCCESS
+    ↓           ↓                    ↓                ↓
+    ↓           ↓                    ↓                ↓
+    ↓           ↓                    ↓                ↓
+EXPIRED    TRANSACTION_FAILED   TRANSACTION_FAILED   TRANSACTION_FAILED
+```
+
+### Onramp Transaction Status Flow (Crypto-to-Fiat)
+```
+PENDING → CRYPTO_RECEIVED → PROCESSING_PAYOUT → PAYOUT_QUEUED → TRANSACTION_SUCCESS
+    ↓           ↓                    ↓                ↓
+    ↓           ↓                    ↓                ↓
+    ↓           ↓                    ↓                ↓
+EXPIRED    TRANSACTION_FAILED   TRANSACTION_FAILED   TRANSACTION_FAILED
+```
+
+### Status Code Definitions
+
+#### Onramp (Crypto-to-Fiat) Status Codes
+
+##### `PENDING`
+- **Description**: Transaction created, waiting for crypto payment
+- **Duration**: 15 minutes (expires if no crypto received)
+- **Action Required**: User must send crypto to provided address
+- **Webhook**: None
+
+##### `CRYPTO_RECEIVED`
+- **Description**: Crypto payment confirmed on blockchain
+- **Duration**: 5-10 minutes (processing time)
+- **Action Required**: Provider processes fiat payout
+- **Webhook**: `crypto_received` event sent to MUDA
+
+##### `PROCESSING_PAYOUT`
+- **Description**: Provider is processing fiat payout
+- **Duration**: 2-5 minutes
+- **Action Required**: Provider validates and sends fiat
+- **Webhook**: None (internal processing)
+
+##### `PAYOUT_QUEUED`
+- **Description**: Fiat payout queued for processing
+- **Duration**: 1-3 minutes
+- **Action Required**: Provider executes payout
+- **Webhook**: None (internal processing)
+
+##### `TRANSACTION_SUCCESS`
+- **Description**: Fiat payout completed successfully
+- **Duration**: Final state
+- **Action Required**: None
+- **Webhook**: `fiat_sent` event sent to MUDA
+
+#### Offramp (Fiat-to-Crypto) Status Codes
+
+##### `PENDING`
+- **Description**: Transaction created, waiting for fiat payment
+- **Duration**: 15 minutes (expires if no fiat received)
+- **Action Required**: User must send fiat to provided account
+- **Webhook**: None
+
+##### `FIAT_RECEIVED`
+- **Description**: Fiat payment confirmed by provider
+- **Duration**: 5-10 minutes (processing time)
+- **Action Required**: Provider processes crypto payout
+- **Webhook**: `fiat_received` event sent to MUDA
+
+##### `PROCESSING_CRYPTO`
+- **Description**: Provider is processing crypto payout
+- **Duration**: 2-5 minutes
+- **Action Required**: Provider validates and sends crypto
+- **Webhook**: None (internal processing)
+
+##### `CRYPTO_QUEUED`
+- **Description**: Crypto payout queued for processing
+- **Duration**: 1-3 minutes
+- **Action Required**: Provider executes crypto payout
+- **Webhook**: None (internal processing)
+
+##### `TRANSACTION_SUCCESS`
+- **Description**: Crypto payout completed successfully
+- **Duration**: Final state
+- **Action Required**: None
+- **Webhook**: `crypto_sent` event sent to MUDA
+
+#### Common Status Codes
+
+##### `TRANSACTION_FAILED`
+- **Description**: Transaction failed at any stage
+- **Duration**: Final state
+- **Action Required**: Provider must handle refund if payment was received
+- **Webhook**: `transaction_failed` event sent to MUDA
+
+##### `EXPIRED`
+- **Description**: Quote expired before payment received
+- **Duration**: Final state
+- **Action Required**: None
+- **Webhook**: `quote_expired` event sent to MUDA
+
+### Status Code Requirements
+
+#### Provider Responsibilities
+- **Real-time Updates**: Update status within 30 seconds of state change
+- **Webhook Notifications**: Send webhooks for all status changes
+- **Timeout Handling**: Handle expired quotes and failed transactions
+- **Refund Processing**: Process refunds for failed transactions with crypto received
+
+#### Status Validation
+- **Crypto Confirmation**: Minimum 3 blockchain confirmations required
+- **Fiat Verification**: Provider must verify payout completion
+- **Audit Trail**: All status changes must be logged
+- **Error Handling**: Failed transactions must have detailed error messages
+
 ## Error Handling
 
 ### Standard Error Response
@@ -444,6 +715,9 @@ interface MobileMoneyPayment {
 2. **Transaction Not Found**: When requesting details for a non-existent transaction
 3. **Invalid Request**: When required fields are missing or invalid
 4. **Authentication Failed**: When API keys are invalid or missing
+5. **Transaction Expired**: When quote expires before confirmation
+6. **Insufficient Funds**: When provider lacks liquidity for payout
+7. **Network Issues**: When blockchain or banking networks are unavailable
 
 ## Implementation Guide
 
@@ -463,11 +737,16 @@ Providers must implement these endpoints:
 - `POST /get-lr-transactions`
 
 ### Security Requirements
-- HTTPS encryption for all endpoints
-- API key authentication
-- Rate limiting
-- Input validation
-- Secure error handling
+- **HTTPS Only**: All endpoints must use TLS 1.2 or higher
+- **Public-Private Key Authentication**: Implement RSA-SHA256 signing
+- **Webhook Signing**: Use HMAC-SHA256 for webhook payloads
+- **IP Whitelisting**: Whitelist MUDA's IP addresses
+- **Rate Limiting**: Implement rate limiting (1000 requests/hour)
+- **Input Validation**: Validate all request parameters
+- **Secure Error Handling**: Never expose sensitive information in errors
+- **Key Management**: Store private keys in secure key management systems
+- **Audit Logging**: Log all API requests and responses
+- **Fraud Prevention**: Implement strict verification before reporting success
 
 ### Testing
 Use MUDA's sandbox environment to test your implementation before going live.
