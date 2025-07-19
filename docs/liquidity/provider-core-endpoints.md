@@ -161,41 +161,4 @@ Get both pay-in and payout transaction details.
         }
     }
 }
-```
-
-## 5. Auto Transaction Status
-
-Automatically update transaction status based on crypto and fiat events.
-
-**Method:** POST  
-**Endpoint:** `{{YOUR_API_BASE_URL}}/auto-transaction-status`
-
-**Request:**
-```json
-{
-    "transaction_id": "tx123456789",
-    "event_type": "crypto_received",
-    "data": {
-        "amount": "100.00",
-        "chain": "BSC",
-        "hash": "0x1234567890abcdef...",
-        "from_address": "0xfromaddress...",
-        "to_address": "0xtoaddress...",
-        "asset_code": "USDC",
-        "fee": "0.0001"
-    }
-}
-```
-
-**Response:**
-```json
-{
-    "status": 200,
-    "message": "Transaction status updated successfully",
-    "data": {
-        "transaction_id": "tx123456789",
-        "status": "CRYPTO_RECEIVED",
-        "updated_at": "2025-03-25T12:30:00.000Z"
-    }
-}
 ``` 

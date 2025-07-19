@@ -165,8 +165,6 @@ X-API-Secret: your-provider-api-secret
 }
 ```
 
-## Transaction Management
-
 ### 4. Get Transaction
 
 **Purpose**: Retrieve complete transaction details including both crypto and fiat sides.
@@ -228,11 +226,12 @@ X-API-Secret: your-provider-api-secret
 
 ### 5. Get All Transactions
 
-**Purpose**: Retrieve all transactions for a provider with optional filtering.
+Get all transactions for a provider with optional filtering.
 
-**Endpoint**: `POST /get-lr-transactions`
+**Method:** POST  
+**Endpoint:** `{{YOUR_API_BASE_URL}}/get-lr-transactions`
 
-**Request**:
+**Request:**
 ```json
 {
     "provider_id": 2,
@@ -242,7 +241,7 @@ X-API-Secret: your-provider-api-secret
 }
 ```
 
-**Response**:
+**Response:**
 ```json
 {
     "status": 200,
@@ -287,42 +286,6 @@ X-API-Secret: your-provider-api-secret
             }
         }
     ]
-}
-```
-
-### 6. Auto Transaction Status
-
-**Purpose**: Automatically update transaction status based on crypto and fiat events.
-
-**Endpoint**: `POST /auto-transaction-status`
-
-**Request**:
-```json
-{
-    "transaction_id": "tx123456789",
-    "event_type": "crypto_received",
-    "data": {
-        "amount": "100.00",
-        "chain": "BSC",
-        "hash": "0x1234567890abcdef...",
-        "from_address": "0xfromaddress...",
-        "to_address": "0xtoaddress...",
-        "asset_code": "USDC",
-        "fee": "0.0001"
-    }
-}
-```
-
-**Response**:
-```json
-{
-    "status": 200,
-    "message": "Transaction status updated successfully",
-    "data": {
-        "transaction_id": "tx123456789",
-        "status": "CRYPTO_RECEIVED",
-        "updated_at": "2025-03-25T12:30:00.000Z"
-    }
 }
 ```
 
@@ -498,7 +461,6 @@ Providers must implement these endpoints:
 - `POST /refresh-lr-quote`
 - `POST /get-lr-transaction`
 - `POST /get-lr-transactions`
-- `POST /auto-transaction-status`
 
 ### Security Requirements
 - HTTPS encryption for all endpoints

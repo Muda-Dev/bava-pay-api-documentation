@@ -13,18 +13,74 @@ The Client Side endpoints allow clients to interact with the Liquidity Rail syst
 Get available assets for a specific currency and service.
 
 **Method:** GET  
-**Endpoint:** `/accounts/getAssets`
+**Endpoint:** `{{URL}}v1/rail/accounts/getAssets`
 
 **Query Parameters:**
 - `q`: Query parameter (optional)
 
-**Request Body:**
+**Response Example:**
 ```json
 {
-    "amount": 400,
-    "currency": "UGX",
-    "asset_code": "USDT",
-    "service_code": "MOBILE_MONEY"
+    "status": 200,
+    "message": "assets fetched successfully",
+    "data": [
+        {
+            "asset_id": 2,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "USDC",
+            "asset_name": "USDC",
+            "chain": "STELLAR"
+        },
+        {
+            "asset_id": 3,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "CUSD",
+            "asset_name": "CUSD",
+            "chain": "CELO"
+        },
+        {
+            "asset_id": 5,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "USDT",
+            "asset_name": "USDT",
+            "chain": "TRON"
+        },
+        {
+            "asset_id": 6,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "CNGN_BSC",
+            "asset_name": "CNGN",
+            "chain": "BSC"
+        },
+        {
+            "asset_id": 7,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "CNGN_XBN",
+            "asset_name": "CNGN",
+            "chain": "BANTU"
+        },
+        {
+            "asset_id": 15,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "USDC_BSC",
+            "asset_name": "USDC",
+            "chain": "BSC"
+        },
+        {
+            "asset_id": 16,
+            "type": "coin",
+            "service_id": 1,
+            "asset_code": "USDC_BASE",
+            "asset_name": "USDC",
+            "chain": "BSC"
+        }
+    ]
 }
 ```
 
@@ -71,7 +127,7 @@ Get all available services for a specific asset and currency.
 Get details of a specific service by ID.
 
 **Method:** GET  
-**Endpoint:** `/accounts/service/{service_id}`
+**Endpoint:** `/accounts/services/{service_id}`
 
 **Request Body:**
 ```json

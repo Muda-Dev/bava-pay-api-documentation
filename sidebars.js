@@ -214,6 +214,11 @@ const sidebars = {
           items: [
             {
               type: "doc",
+              id: "liquidity/muda-rl-specification",
+              label: "MUDA RL Specification 1.0.1"
+            },
+            {
+              type: "doc",
               id: "liquidity/provider-side",
               label: "Provider Side Endpoints"
             },
