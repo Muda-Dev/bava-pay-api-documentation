@@ -20,7 +20,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Muda Pay",
+      label: "Muda Pay (Fiat)",
       items: [
         {
           type: "doc",
@@ -119,7 +119,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Liquidity Rail",
+      label: "Liquidity Rail (On/Off Ramp)",
       items: [
         {
           type: "category",
