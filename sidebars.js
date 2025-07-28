@@ -20,7 +20,7 @@ const sidebars = {
     },
     {
       type: "category",
-      label: "Muda Pay (Fiat)",
+      label: "Muda Pay (Fiat collections/pay-outs)",
       items: [
         {
           type: "doc",
