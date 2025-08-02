@@ -16,7 +16,7 @@ The MUDA Liquidity Rail (MRL) Provider Specification defines the standard interf
 2. [Architecture Overview](#architecture-overview)
 3. [Authentication](#authentication)
 4. [Core Endpoints](#core-endpoints)
-5. [Transaction Management](#transaction-management)
+5. [Transaction Status Codes & Lifecycle](#transaction-status-codes--lifecycle)
 6. [Webhook Integration](#webhook-integration)
 7. [Data Models](#data-models)
 8. [Error Handling](#error-handling)
