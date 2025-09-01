@@ -205,6 +205,17 @@ const sidebars = {
                   label: "Get Banks"
                 }
               ]
+            },
+            {
+              type: "category",
+              label: "On-Ramp Integrations",
+              items: [
+                {
+                  type: "doc",
+                  id: "liquidity/quidax-ngn-onramp",
+                  label: "Quidax NGN On-Ramp"
+                }
+              ]
             }
           ]
         },
